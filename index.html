@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Engagement Platform</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3em;
+            letter-spacing: 1px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        /* Header Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Activity Cards */
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .activity-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .activity-card p {
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Poll and Event Form Styles */
+        form {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        form input,
+        form textarea,
+        form button {
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1em;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .activity-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Civic Engagement Platform</h1>
+        <p>Join Us in Making a Difference</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>Get Involved in Civic Activities</h2>
+            <div class="activity-cards">
+
+                <div class="activity-card">
+                    <h3>Public Opinion Polls</h3>
+                    <p>Vote on important issues and influence policy decisions.</p>
+                    <a href="#" class="btn" onclick="showPoll()">Vote Now</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Town Hall Meetings</h3>
+                    <p>Attend live meetings and directly interact with local officials.</p>
+                    <a href="#" class="btn" onclick="showEvent('town-hall')">View Schedule</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Petitions</h3>
+                    <p>Sign petitions to support causes you believe in.</p>
+                    <a href="#" class="btn" onclick="showEvent('petition')">Sign Petition</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Community Clean-up</h3>
+                    <p>Volunteer to help clean up your local parks and streets.</p>
+                    <a href="#" class="btn" onclick="showEvent('cleanup')">Join the Effort</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Public Hearings</h3>
+                    <p>Attend public hearings to voice your concerns on proposed laws.</p>
+                    <a href="#" class="btn" onclick="showEvent('public-hearing')">Learn More</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Civic Education</h3>
+                    <p>Learn about your civic duties through campaigns and workshops.</p>
+                    <a href="#" class="btn" onclick="showEvent('education')">Explore Programs</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Volunteer Opportunities</h3>
+                    <p>Get involved by volunteering for local government programs.</p>
+                    <a href="#" class="btn" onclick="showEvent('volunteer')">Sign Up</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Citizen Advisory Councils</h3>
+                    <p>Join a council to advise local government on important issues.</p>
+                    <a href="#" class="btn" onclick="showEvent('advisory')">Apply Now</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Participatory Budgeting</h3>
+                    <p>Help decide how government funds are spent in your community.</p>
+                    <a href="#" class="btn" onclick="showEvent('budgeting')">Learn More</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Local Services Survey</h3>
+                    <p>Provide feedback on local services to improve the community.</p>
+                    <a href="#" class="btn" onclick="showEvent('survey')">Take Survey</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="poll" style="display:none;">
+            <h3>Vote on Public Opinion</h3>
+            <form>
+                <label for="poll-option">Choose your opinion:</label>
+                <select id="poll-option" name="poll-option">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="undecided">Undecided</option>
+                </select>
+                <button type="button" onclick="submitPoll()">Submit Vote</button>
+            </form>
+            <div id="poll-result"></div>
+        </section>
+
+        <section id="event-info" style="display:none;">
+            <h3>Event Details</h3>
+            <p id="event-description"></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Civic Engagement Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showPoll() {
+            document.getElementById('poll').style.display = 'block';
+            document.getElementById('event-info').style.display = 'none';
+        }
+
+        function submitPoll() {
+            const choice = document.getElementById('poll-option').value;
+            const result = document.getElementById('poll-result');
+            result.textContent = `You voted: ${choice}`;
+        }
+
+        function showEvent(eventType) {
+            const eventInfo = document.getElementById('event-info');
+            const eventDescription = document.getElementById('event-description');
+            let description = '';
+
+            switch (eventType) {
+                case 'town-hall':
+                    description = 'Join us for a live town hall meeting with local officials to discuss key issues in our community.';
+                    break;
+                case 'petition':
+                    description = 'Sign the petition to support environmental conservation policies in our region.';
+                    break;
+                case 'cleanup':
+                    description = 'Volunteer to help clean up your local park and make a difference in your community.';
+                    break;
+                case 'public-hearing':
+                    description = 'Attend the public hearing to voice your opinions on the new city zoning laws.';
+                    break;
+                case 'education':
+                    description = 'Explore a series of workshops aimed at educating citizens on their rights and duties.';
+                    break;
+                case 'volunteer':
+                    description = 'Find volunteer opportunities for government-led initiatives like disaster response and public health programs.';
+                    break;
+                case 'advisory':
+                    description = 'Join a citizen advisory council to influence local government policies and decisions.';
+                    break;
+                case 'budgeting':
+                    description = 'Learn how to get involved in the participatory budgeting process and help decide how local funds are spent.';
+                    break;
+                case 'survey':
+                    description = 'Complete the local services survey to provide feedback on how to improve our community.';
+                    break;
+            }
+
+            eventDescription.textContent = description;
+            eventInfo.style.display = 'block';
+            document.getElementById('poll').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
