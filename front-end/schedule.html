@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town Hall Meeting Schedule</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .schedule {
+            margin-top: 20px;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule h3 {
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+
+        .schedule ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .schedule ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Home Button Styling */
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #007bff; /* Bright blue */
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for visibility */
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .home-btn span {
+            margin-right: 8px; /* Space between the icon and text */
+            font-size: 1.4em; /* Slightly larger icon */
+        }
+
+        .home-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        .home-btn:active {
+            background-color: #003d80; /* Even darker blue when clicked */
+            transform: translateY(2px); /* Subtle press effect */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Town Hall Meeting Schedule</h1>
+        <div class="schedule">
+            <h3>Upcoming Meetings:</h3>
+            <ul>
+                <li><strong>January 10, 2025:</strong> Local Budget Allocation Discussion - 5:00 PM</li>
+                <li><strong>January 17, 2025:</strong> Infrastructure Planning Updates - 6:00 PM</li>
+                <li><strong>January 24, 2025:</strong> Community Safety and Policing - 4:30 PM</li>
+            </ul>
+        </div>
+        <!-- Home Button -->
+        <a href="index.html" class="home-btn">
+            <span>&#x2302;</span> Home
+        </a>
+    </div>
+</body>
+
+</html>

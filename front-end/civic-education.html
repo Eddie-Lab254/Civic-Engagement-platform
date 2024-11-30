@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Education</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #3498db;
+            color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            color: white;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Civic Education</h1>
+        <p class="description">
+            Explore campaigns and workshops designed to educate you about your civic rights and responsibilities.
+        </p>
+
+        <h3>Programs and Workshops</h3>
+        <ul id="education-programs">
+            <li onclick="viewDetails('Rights and Duties')">Understanding Your Rights and Duties</li>
+            <li onclick="viewDetails('Voter Education')">Voter Education Workshop</li>
+            <li onclick="viewDetails('Community Leadership')">Community Leadership Training</li>
+        </ul>
+
+        <div id="program-details" style="display: none; text-align: center; margin-top: 20px; color: #2c3e50;">
+            <h3 id="program-title"></h3>
+            <p>Date: <span id="program-date">TBD</span></p>
+            <p>Location: <span id="program-location">TBD</span></p>
+            <button onclick="goBack()" style="padding: 10px 20px; border: none; background: #3498db; color: white; border-radius: 5px; cursor: pointer;">Back to Programs</button>
+        </div>
+
+        <a href="index.html" class="home-btn">
+            <span>&#x2302;</span> Home
+        </a>
+    </div>
+
+    <script>
+        function viewDetails(programTitle) {
+            const programDetails = {
+                "Rights and Duties": { date: "January 10, 2025", location: "City Hall, Auditorium" },
+                "Voter Education": { date: "January 15, 2025", location: "Community Center, Main Hall" },
+                "Community Leadership": { date: "January 20, 2025", location: "Town Library, Conference Room" }
+            };
+
+            const details = programDetails[programTitle];
+            if (details) {
+                document.getElementById("education-programs").style.display = "none";
+                document.getElementById("program-title").textContent = programTitle;
+                document.getElementById("program-date").textContent = details.date;
+                document.getElementById("program-location").textContent = details.location;
+                document.getElementById("program-details").style.display = "block";
+            }
+        }
+
+        function goBack() {
+            document.getElementById("program-details").style.display = "none";
+            document.getElementById("education-programs").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

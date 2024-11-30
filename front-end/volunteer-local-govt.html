@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Opportunities</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #3498db;
+            color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            color: white;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Volunteer Opportunities</h1>
+        <p class="description">
+            Join hands with your community by volunteering for various government programs.
+        </p>
+
+        <h3>Current Opportunities</h3>
+        <ul id="volunteer-list">
+            <li onclick="viewDetails('Park Restoration')">Park Restoration</li>
+            <li onclick="viewDetails('Community Food Drive')">Community Food Drive</li>
+            <li onclick="viewDetails('Library Support Program')">Library Support Program</li>
+        </ul>
+
+        <div id="opportunity-details" style="display: none; text-align: center; margin-top: 20px; color: #2c3e50;">
+            <h3 id="opportunity-title"></h3>
+            <p>Date: <span id="opportunity-date">TBD</span></p>
+            <p>Location: <span id="opportunity-location">TBD</span></p>
+            <button onclick="goBack()" style="padding: 10px 20px; border: none; background: #3498db; color: white; border-radius: 5px; cursor: pointer;">Back to Opportunities</button>
+        </div>
+
+        <a href="index.html" class="home-btn">
+            <span>&#x2302;</span> Home
+        </a>
+    </div>
+
+    <script>
+        function viewDetails(opportunityTitle) {
+            const opportunityDetails = {
+                "Park Restoration": { date: "January 12, 2025", location: "Central Park, Main Entrance" },
+                "Community Food Drive": { date: "January 18, 2025", location: "Downtown Community Center" },
+                "Library Support Program": { date: "January 25, 2025", location: "City Library, Hall A" }
+            };
+
+            const details = opportunityDetails[opportunityTitle];
+            if (details) {
+                document.getElementById("volunteer-list").style.display = "none";
+                document.getElementById("opportunity-title").textContent = opportunityTitle;
+                document.getElementById("opportunity-date").textContent = details.date;
+                document.getElementById("opportunity-location").textContent = details.location;
+                document.getElementById("opportunity-details").style.display = "block";
+            }
+        }
+
+        function goBack() {
+            document.getElementById("opportunity-details").style.display = "none";
+            document.getElementById("volunteer-list").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Advisory Councils</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            color: white;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Citizen Advisory Councils</h1>
+        <p class="description">
+            Apply to be part of a council and help shape your community's policies and programs.
+        </p>
+
+        <form id="advisory-form">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="reason">Why do you want to join the council?</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Write your reason here" required></textarea>
+
+            <button type="button" onclick="submitApplication()">Submit Application</button>
+        </form>
+
+        <div id="application-result" style="display: none; text-align: center; margin-top: 20px; color: #2c3e50;">
+            <h3>Thank you for your application!</h3>
+            <p>We will review your submission and get back to you shortly.</p>
+        </div>
+
+        <a href="index.html" class="home-btn">
+            <span>&#x2302;</span> Home
+        </a>
+    </div>
+
+    <script>
+        function submitApplication() {
+            const form = document.getElementById("advisory-form");
+            const result = document.getElementById("application-result");
+
+            // Validate form inputs (for demo purposes)
+            const name = document.getElementById("full-name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const reason = document.getElementById("reason").value.trim();
+
+            if (name && email && reason) {
+                form.style.display = "none";
+                result.style.display = "block";
+            } else {
+                alert("Please fill out all fields before submitting.");
+            }
+        }
+    </script>
+</body>
+
+</html>

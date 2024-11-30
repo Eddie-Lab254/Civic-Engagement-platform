@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participatory Budgeting</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1em;
+            color: white;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .home-btn span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Participatory Budgeting</h1>
+        <p class="description">
+            Contribute your voice to how government funds are allocated to address your community's needs.
+        </p>
+
+        <form id="budgeting-form">
+            <label for="project-name">Proposed Project Name</label>
+            <input type="text" id="project-name" name="project-name" placeholder="Enter the project name" required>
+
+            <label for="project-description">Project Description</label>
+            <textarea id="project-description" name="project-description" rows="4" placeholder="Describe your project idea" required></textarea>
+
+            <label for="budget-amount">Proposed Budget Amount</label>
+            <input type="number" id="budget-amount" name="budget-amount" placeholder="Enter the proposed budget" required>
+
+            <button type="button" onclick="submitProposal()">Submit Proposal</button>
+        </form>
+
+        <div id="proposal-result" style="display: none; text-align: center; margin-top: 20px; color: #2c3e50;">
+            <h3>Thank you for your proposal!</h3>
+            <p>We will review your suggestion and consider it during the budget planning process.</p>
+        </div>
+
+        <a href="index.html" class="home-btn">
+            <span>&#x2302;</span> Home
+        </a>
+    </div>
+
+    <script>
+        function submitProposal() {
+            const form = document.getElementById("budgeting-form");
+            const result = document.getElementById("proposal-result");
+
+            // Validate form inputs (for demo purposes)
+            const name = document.getElementById("project-name").value.trim();
+            const description = document.getElementById("project-description").value.trim();
+            const amount = document.getElementById("budget-amount").value.trim();
+
+            if (name && description && amount) {
+                form.style.display = "none";
+                result.style.display = "block";
+            } else {
+                alert("Please fill out all fields before submitting.");
+            }
+        }
+    </script>
+</body>
+
+</html>
