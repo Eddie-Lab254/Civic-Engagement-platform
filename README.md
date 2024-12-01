@@ -37,7 +37,7 @@ This project is aimed at increasing civic participation by offering a platform w
 - **HTML5** for the structure of the web pages.
 - **CSS3** for styling and layout.
 - **JavaScript** for functionality and interactivity.
-- **Browser-based** (No server-side backend, purely front-end).
+
 
 ## Installation Instructions
 
